@@ -12,30 +12,16 @@
 
 <body>
     <div>
-        <h1>Calcular area de una figura geometrica</h1>
-        <select name="select" id="dato" class="dato">
-            <option value="value1" disabled selected>Selecciona una opcion</option>
-            <option value="trian">Triangulo</option>
-            <option value="circu">Circulo</option>
-        </select>
+        <h1>Calcular el area de un rectangulo</h1>
+        
+        <h2>Ingresar el lado 1:</h2>
+        <input id="lado1" type="number" required>
 
-        <form id="formTrian" class="formTrian">
-            <h1>Ingresar la base:</h1>
-            <input type="number" id="base" required>
-            <h1>Ingresar la altura:</h1>
-            <input type="number" id="altu" required>
-        </form>
+        <h2>Ingresar el lado 2:</h2>
+        <input id="lado2" type="number" required>
 
-        <form id="formCircu" class="formCircu">
-            <h1>Ingresar el radio:</h1>
-            <input type="number" id="radio" required>
-        </form>
-
-        <form id="area" class="area">
-            <h1>El resultado es:</h1>
-            <h1 id="res" class="res"></h1>
-            <input value="calcular" type="submit" class="calcular">
-        </form>
+        <h1 id="res" class="res"></h1>
+        <input id="calcular" type="submit" value="calcular">
     </div>
 
     <script src="main.js"></script>

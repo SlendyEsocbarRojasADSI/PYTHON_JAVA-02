@@ -1,33 +1,18 @@
-function comprobar(seleccionado){
-    if (seleccionado == "trian"){
-        document.querySelector("#formTrian").style.display= 'block';
-    } else{
-        document.querySelector("#formCircu").style.display= 'block';
-    }
-    let seleccionado;
+function area(lado1, lado2){
+    let area= lado*lado2;
+    return area;
     addEventListener("DOMContentLoaded", (e)=>{
-        let dato= document.querySelector("#dato");
-        dato.addEventListener("change", (e)=>{
-            document.querySelector("#formTrian").style.display= 'none';
-            document.querySelector("#formCircu").style.display= 'none';
-            seleccionado = dato.value;
-            comprobar(seleccionado);
-        })
-    })
-    addEventListener("DOMContentLoaded", (e)=>{
-        let area= document.querySelector("#area");
-        area.addEventListener("submit", (e)=>{
+        let boton= document.querySelector("#form");
+        boton.addEventListener("submit", (e)=>{
             e.preventDefault();
-
-            if (seleccionado=="trian"){
-                let base= document.querySelector("#base").value;
-                let altu= document.querySelector("#altu").value;
-                let area= (base*altura)/2;
-
-                document.querySelector("#res").innerHTML= area;
-            } else{
-                alert("Debes seleccionar una figura!!")
-            }
+        let lado1= document.querySelector("#lado1").value;
+        let lado2= document.querySelector("#lado2").value;
+        if (lado1<=0 && lado2<=0){
+            alert("No puedes ingresar lados negativos subnormal");
+        } else[
+            let res= area(lado1, lado2);
+            document.querySelector("#area").innerHTML= res;
+        ]
         })
     })
 }

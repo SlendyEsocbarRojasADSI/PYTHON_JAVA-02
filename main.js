@@ -1,20 +1,14 @@
-let dato= document.querySelector('#dato');
-dato.addEventListener("change", ()=>{
-    let Selection= dato.value;
-    let boton= document.querySelector('#form');
-    boton.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        let sueldoEmp= pagar(Selection);
-        document.querySelector('#total').innerHTML= sueldoEmp;
-    })
-})
-function pagar(Selection){
-    let horas= document.querySelector('#horas').value;
-    if (Selection=='planta'){
-        const sueldo= 20000;
-        let pagaTotal=sueldo*horas;
-        return pagaTotal;
+let x=0;
+let nums= Number(prompt("Ingresar el total de numeros:"));
+let suma= 0;
+let multi= 1;
+for (var i = 0; i < nums; i++){
+    let num= Number(prompt("Ingresar un numero:"));
+    if (num % 2 === 0){
+        suma += num;
     } else{
-        alert("Debes seleccionar un cargo")
+        multi *= num;
     }
+    alert("La suma de los numeros pares es de:" +suma);
+    alert("La multiplicacion de los numeros impares es de:" +multi);
 }

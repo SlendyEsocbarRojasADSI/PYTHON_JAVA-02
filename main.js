@@ -1,55 +1,33 @@
-function mayor(num1, num2, num3){
-    if (num1>=num2 && num2>=num3){
-        let resultado= "El numero mayor es:" +num1;
-        return resultado;
+function comprobar(seleccionado){
+    if (seleccionado == "trian"){
+        document.querySelector("#formTrian").style.display= 'block';
+    } else{
+        document.querySelector("#formCircu").style.display= 'block';
     }
-    else if (num2>=num1 && num1>=num3){
-        let resultado= "El numero mayor es:" +num2;
-        return resultado;
-    }else{
-        let resultado= "El numero mayor es:" +num3;
-        return resultado;
+    let seleccionado;
+    addEventListener("DOMContentLoaded", (e)=>{
+        let dato= document.querySelector("#dato");
+        dato.addEventListener("change", (e)=>{
+            document.querySelector("#formTrian").style.display= 'none';
+            document.querySelector("#formCircu").style.display= 'none';
+            seleccionado = dato.value;
+            comprobar(seleccionado);
+        })
+    })
+    addEventListener("DOMContentLoaded", (e)=>{
+        let area= document.querySelector("#area");
+        area.addEventListener("submit", (e)=>{
+            e.preventDefault();
 
-        document.querySelector("#mayor").innerHTML= "";
-        document.querySelector("#menor").innerHTML= "";
-        document.querySelector("#iguales").innerHTML= "";
+            if (seleccionado=="trian"){
+                let base= document.querySelector("#base").value;
+                let altu= document.querySelector("#altu").value;
+                let area= (base*altura)/2;
 
-        if (num1>=num2 && num2>=num3){
-            document.querySelector("#mayor").innerHTML= "El numero mayor es:" +num1;
-            if (num2>=num3){
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num2;
+                document.querySelector("#res").innerHTML= area;
             } else{
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num3;
+                alert("Debes seleccionar una figura!!")
             }
-        } else if (num2>num1 && num2>=num3){
-            document.querySelector("#mayor").innerHTML= "El numero mayor es" +num2;
-            if (num1>num3){
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num3;
-            } else{
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num1;
-            }
-        } else if (num3>num1 && num3>=num2){
-            document.querySelector("#mayor").innerHTML= "El numero mayor es:" +num3;
-            if (num1>num2){
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num2;
-            } else{
-                document.querySelector("#menor").innerHTML= "El numero menor es:" +num1;
-            }
-        } else{
-            document.querySelector("#iguales").innerHTML= "Todos los numeros son iguales" +num1
-        }
-    }
+        })
+    })
 }
-
-addEventListener("DOMContentLoaded", (e)=>{
-    let cal= document.querySelector('#form');
-    
-
-    let num1= document.querySelector("#num1").value;
-    let num2= document.querySelector("#num2").value;
-    let num3= document.querySelector("#num3").value;
-
-    let resultado= mayor(num1, num2, num3);
-    document.querySelector("#res").innerHTML=resultado
-    mayor(num1, num2, num3);
-})

@@ -1,18 +1,15 @@
-function area(lado1, lado2){
-    let area= lado*lado2;
-    return area;
-    addEventListener("DOMContentLoaded", (e)=>{
-        let boton= document.querySelector("#form");
-        boton.addEventListener("submit", (e)=>{
-            e.preventDefault();
-        let lado1= document.querySelector("#lado1").value;
-        let lado2= document.querySelector("#lado2").value;
-        if (lado1<=0 && lado2<=0){
-            alert("No puedes ingresar lados negativos subnormal");
-        } else[
-            let res= area(lado1, lado2);
-            document.querySelector("#area").innerHTML= res;
-        ]
-        })
+addEventListener("DOMContentLoaded", (e)=>{
+    let total= document.querySelector("#form");
+    total.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        
+        let pago= document.querySelector("#pago").value;
+        if (pago>130000){
+            let total= pago-(pago*0.15);
+            document.querySelector("#total").innerHTML= 'El total a pagar es de${total} y se le palica un descuento del 15%';
+        } else{
+            alert("normal")
+            document.querySelector("#total").innerHTML= 'El total a pagar es de ${pagar}';
+        }
     })
-}
+})

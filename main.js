@@ -1,11 +1,14 @@
-function positivo(num){
-    if (num>0 && num<100){
-        let resul= "El numero es positivo y es menor a 100";
-        return resul;
+function mayor(num1, num2, num3){
+    if (num1>=num2 && num2>=num3){
+        let resultado= "El numero mayor es:" +num1;
+        return resultado;
     }
-    else{
-        let resul= "El numero o es negativo o es mayor a 100";
-        return resul;
+    else if (num2>=num1 && num1>=num3){
+        let resultado= "El numero mayor es:" +num2;
+        return resultado;
+    }else{
+        let resultado= "El numero mayor es:" +num3;
+        return resultado;
     }
 }
 
@@ -14,9 +17,11 @@ addEventListener("DOMContentLoaded", (e)=>{
     cal.addEventListener("submit", (e)=>{
         e.preventDefault();
 
-        let num= document.querySelector("#numero").value;
-        let resul = positivo(num);
+        let num1= document.querySelector("#num1").value;
+        let num2= document.querySelector("#num2").value;
+        let num3= document.querySelector("#num3").value;
 
-        document.querySelector("#res").innerHTML=resul
+        let resultado= mayor(num1, num2, num3);
+        document.querySelector("#res").innerHTML=resultado
     })
 })

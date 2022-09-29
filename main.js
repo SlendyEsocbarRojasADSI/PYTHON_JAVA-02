@@ -1,8 +1,7 @@
-let tempe= Number(prompt("Ingresar la temperatura:"));
-let presion= Number(prompt("Ingresar la presion:"));
-    if (tempe>200 && presion>100){
-        alert("alarma");
-    }
-    else{
-        alert("normal");
+let pago= document.querySelector("#pago").value;
+    if (pago>130000){
+        let total= pago-(pago*0.15);
+        document.querySelector("#total").innerHTML= 'El total a pagar es de${total} y se le palica un descuento del 15%';
+    } else{
+        document.querySelector("#total").innerHTML= 'El total a pagar es de ${pagar}';
     }

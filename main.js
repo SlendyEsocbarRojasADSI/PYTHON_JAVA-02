@@ -1,14 +1,10 @@
-let x=0;
-let nums= Number(prompt("Ingresar el total de numeros:"));
-let suma= 0;
-let multi= 1;
-for (var i = 0; i < nums; i++){
-    let num= Number(prompt("Ingresar un numero:"));
-    if (num % 2 === 0){
-        suma += num;
-    } else{
-        multi *= num;
-    }
-    alert("La suma de los numeros pares es de:" +suma);
-    alert("La multiplicacion de los numeros impares es de:" +multi);
+let iva= 0.20;
+let produs= 1;
+for (var i=1; i<=produs; i++){
+    let produ= Number(prompt("Ingrese el valor de los 5 productos:"));
+    let prodi= produ*iva;
+    alert("Por sus 5 productos debe pagar este IVA: $" +prodi+ "mil pesos");
+
+    let total= prodi+produ;
+    alert("El monto total a pagar por los 5 productos es de: $" +total+ "mil pesos");
 }

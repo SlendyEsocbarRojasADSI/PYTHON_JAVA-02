@@ -1,10 +1,9 @@
-let estus= 5;
-let promedi= 0;
-for (var i=1; i<=estus; i++){
-    let name= prompt("Ingresar su nombre:");
-    let apelli= prompt("Ingresar su apellido:");
-    let edad= prompt("Ingresar su edad:");
-    let nota= Number(prompt("Ingresar su nota:"));
-    promedi += nota/estus;
-}
-alert("La nota promedio en la rama de computacion es de:" +promedi);
+let num1= Number(prompt("Ingresar el primer numero:"));
+let num2= Number(prompt("Ingresar el segundo numero:"));
+    if (num1>num2){
+        let resta= num2-num1;
+        alert("Debido a que el numero " +num1+ " es mayor que " +num2+ " se resto y dio con un total de: " +resta);
+    }
+    else {
+        alert("No es posible hacer esta operadiocn");
+    }
